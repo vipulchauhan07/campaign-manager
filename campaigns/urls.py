@@ -1,7 +1,13 @@
-from django.urls import path
-from .views import CampaignListCreateAPIView, CampaignRetrieveUpdateDestroyAPIView
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from campaigns.views import CampaignViewSet, TargetAudienceViewSet, OwnerViewSet, CampaignOwnerViewSet
+
+router = DefaultRouter()
+router.register(r'campaigns', CampaignViewSet)
+router.register(r'targetaudience', TargetAudienceViewSet)
+router.register(r'owners', OwnerViewSet)
+router.register(r'campaignowners', CampaignOwnerViewSet)
 
 urlpatterns = [
-    path('campaigns/', CampaignListCreateAPIView.as_view(), name='campaign-list-create'),
-    path('campaigns/<int:pk>/', CampaignRetrieveUpdateDestroyAPIView.as_view(), name='campaign-detail'),
+    path('', include(router.urls)),
 ]
