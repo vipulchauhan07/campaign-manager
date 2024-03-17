@@ -1,10 +1,8 @@
-from datetime import timedelta, timezone
-from warnings import filters
-from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets
+from datetime import timezone
 from django.shortcuts import render
 from rest_framework.decorators import api_view
-from rest_framework.response import Response, status
+from rest_framework.response import Response
+from rest_framework import status
 from django.db.models import Q
 from campaigns.models import Campaign
 from campaigns.serializers import CampaignSerializer

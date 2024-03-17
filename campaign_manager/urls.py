@@ -5,5 +5,5 @@ from django.contrib import admin
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/campaign', include('campaigns.urls.campaign_urls')),
-    path('api/target-audience', include('campaigns.target_audience_urls')),
+    # path('api/target-audience', include('campaigns.target_audience_urls')),
 ]
