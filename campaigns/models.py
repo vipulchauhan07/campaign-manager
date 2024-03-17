@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 
-# Create your models here.
 
 class GenderType(models.TextChoices):
     MALE = "MALE", "Male"
@@ -19,7 +18,7 @@ class Campaign(models.Model):
     marketing_channel = models.CharField(max_length=50, choices=MarketingChannel.choices)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(default=timezone.now)
-    updated_at = models.DateTimeField(default= None)
+    updated_at = models.DateTimeField(null=True, blank=True)
     class Meta:
         # Specify the desired table name
         db_table = 'campaign'
