@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-# from campaigns import admin  # Uncomment this line
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
