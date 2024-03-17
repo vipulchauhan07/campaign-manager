@@ -11,7 +11,7 @@ from django.urls import path
 from campaigns.views import campaign_views as views
 
 @api_view(['POST', 'PUT'])
-def createCampaign(request):
+def createOrUpdateCampaign(request):
     data = request.data
     try:
         if request.method == 'POST':

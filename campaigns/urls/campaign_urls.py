@@ -5,6 +5,5 @@ from campaigns.views import campaign_views as views
 
 urlpatterns = [
     path('campaigns/', views.getCampaign, name='get_campaigns'),  # GET endpoint to retrieve campaigns with filters
-    path('campaigns/<int:campaign_id>/', views.getCampaign, name='get_campaign'),  # GET endpoint to retrieve a specific campaign
-    path('campaigns/create/', views.createCampaign, name='create_campaign'),  # POST endpoint to create a new campaign
+    path('campaigns/<int:campaign_id>/', views.createOrUpdateCampaign, name='create_or_update_campaign'),  # POST and PUT endpoint to create or update a campaign
 ]
