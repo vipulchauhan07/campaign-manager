@@ -9,6 +9,8 @@ from django.db.models import Q
 from campaigns.models import Campaign
 from campaigns.serializers import CampaignSerializer
 from django.utils import timezone
+from django.urls import path
+from campaigns.views import campaign_views as views
 
 @api_view(['POST', 'PUT'])
 def createCampaign(request):
@@ -41,8 +43,6 @@ def createCampaign(request):
     except:
         message = {'detail': 'Error occurred.'}
         return Response(message, status=status.HTTP_400_BAD_REQUEST)
-   
-   
 
 
 @api_view(['GET'])
