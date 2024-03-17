@@ -1,7 +1,7 @@
 # campaign_urls.py
 
 from django.urls import path
-from . import views
+from campaigns.views import campaign_views as views
 
 urlpatterns = [
     path('campaigns/', views.getCampaign, name='get_campaigns'),  # GET endpoint to retrieve campaigns with filters
