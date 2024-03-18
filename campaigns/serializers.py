@@ -11,7 +11,7 @@ class CampaignSerializer(serializers.ModelSerializer):
 class TargetAudienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = TargetAudience
-        fields = '__all__'
+        fields = ['id', 'name', 'email', 'phone_number', 'address', 'age', 'gender_type']
 
 
 class OwnerSerializer(serializers.ModelSerializer):

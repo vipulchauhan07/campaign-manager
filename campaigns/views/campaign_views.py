@@ -47,39 +47,6 @@ def createOrUpdateCampaign(request):
         return Response({"detail": "An error occurred."}, status=status.HTTP_400_BAD_REQUEST)
 
 
-""" @api_view(['GET'])
-def campaignDetails(request):
-    try:
-        # Retrieve query parameters from the request
-        id = request.query_params.get('id', None)
-        name = request.query_params.get('name', None)
-        country = request.query_params.get('country', None)
-        marketing_channel = request.query_params.get('marketing_channel', None)
-        is_active = request.query_params.get('active', None)
-
-        # Build filter conditions
-        filter_conditions = Q()
-        if id:
-            filter_conditions &= Q(name__icontains=id)
-        if name:
-            filter_conditions &= Q(name__icontains=name)
-        if country:
-            filter_conditions &= Q(country__icontains=country)
-        if marketing_channel:
-            filter_conditions &= Q(marketing_channel__icontains=marketing_channel)
-        if is_active is not None:
-            filter_conditions &= Q(is_active=is_active.lower() == 'true')  # Convert 'true' string to boolean
-
-        # Apply filters to the queryset
-        campaigns = Campaign.objects.filter(filter_conditions)
-
-        # Serialize the queryset and return response
-        serializer = CampaignSerializer(campaigns, many=True)
-        return Response(serializer.data)
-    except:
-        message = {'detail': 'Error occurred'}
-        return Response(message, status=status.HTTP_400_BAD_REQUEST) """
-
 @api_view()
 def campaignDetails(request):
     try:
